@@ -15,9 +15,3 @@ ADD . /usr/src/app
 
 # run server
 CMD python manage.py runserver -h 0.0.0.0
-
-
-FROM postgres
-
-# run create.sql on init
-ADD ./project/db/create.sql /docker-entrypoint-initdb.d
