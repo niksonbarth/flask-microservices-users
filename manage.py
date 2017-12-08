@@ -1,5 +1,5 @@
 # manage.py
-
+    
 import unittest
 
 from flask_script import Manager
