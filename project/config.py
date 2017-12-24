@@ -15,20 +15,17 @@ class BaseConfig:
 class DevelopmentConfig(BaseConfig):
     """Development configuration"""
     DEBUG = True
-    #SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    SQLALCHEMY_DATABASE_URI = 'postgres://postgres:postgres@localhost:5432/users_dev'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 
 class TestingConfig(BaseConfig):
     """Testing configuration"""
     DEBUG = True
     TESTING = True
-    #SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_TEST_URL')
-    SQLALCHEMY_DATABASE_URI = 'postgres://postgres:postgres@localhost:5432/users_test'
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_TEST_URL')
+    
 
 class ProductionConfig(BaseConfig):
     """Production configuration"""
     DEBUG = False
-    #SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    SQLALCHEMY_DATABASE_URI = 'postgres://postgres:postgres@localhost:5432/users_dev'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
