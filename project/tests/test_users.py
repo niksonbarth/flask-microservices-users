@@ -7,11 +7,13 @@ from project.tests.base import BaseTestCase
 from project import db
 from project.api.models import User
 
+
 def add_user(username, email):
     user = User(username=username, email=email)
     db.session.add(user)
     db.session.commit()
     return user
+
 
 class TestUserService(BaseTestCase):
     """Tests for the Users Service."""
@@ -87,10 +89,9 @@ class TestUserService(BaseTestCase):
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
-            self.assertIn(
-                'Sorry. That email already exists.', data['message'])
+            self.assertIn('Sorry. That email already exists.', data['message'])
             self.assertIn('fail', data['status'])
-    
+
     def test_single_user(self):
         """Ensure get single user behaves correctly."""
         user = add_user('michael', 'michael@realpython.com')
