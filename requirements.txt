@@ -19,3 +19,4 @@ six==1.11.0
 SQLAlchemy==1.1.15
 Werkzeug==0.12.2
 wrapt==1.10.11
+flake8==3.5.0
