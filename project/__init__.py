@@ -2,8 +2,8 @@
 
 
 import os
-#import datetime
-from flask import Flask, jsonify
+# import datetime
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
